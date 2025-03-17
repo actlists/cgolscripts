@@ -13,7 +13,7 @@ h = r[3]
 for k in range(p+1):
     for i in range(h):
         for j in range(w):
-            c = g.getcell(j+r[0], i+r[1])
+            c = g.getcell(j+r[0], i+r[1]+h*k)
             d = c
             if (c > 9): d = c - 8
             if (c > 18): d = c - 17
@@ -34,7 +34,6 @@ for k in range(p+1):
             s += ["0,", "1,", "*,", ss0, ss1, ss2, ss3, ss4, ss5, ss6, "1,"][d]
         s += "\n"
     s += "\n"
-    g.run(1)
-    
+
 with open(r"//wsl.localhost/Ubuntu/home/sylvani/logic-life-search/pattern.txt", "w") as f:
     f.write(s)
